@@ -1,4 +1,4 @@
-package domain;
+package com.scrumtraveller.domain;
 
 
 public class Greeting {
