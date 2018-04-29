@@ -1,4 +1,4 @@
-package com.scrumtraveller.domain;
+package com.scrumtraveller.springboot.domain;
 
 
 public class Greeting {
