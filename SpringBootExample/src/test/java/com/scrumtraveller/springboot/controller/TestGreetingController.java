@@ -2,6 +2,7 @@ package com.scrumtraveller.springboot.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -48,8 +49,8 @@ public class TestGreetingController {
 		// Return JSON looks like this: {"id":1,"content":"Hello, Hsia"}
 		Greeting greeting = new Greeting(1l, "Hello, Hsia");
 
-		Mockito.when(greetingService.getGreeting()).thenReturn(greeting);
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/greeting?name\"=hsia").accept(MediaType.APPLICATION_JSON);
+		Mockito.when(greetingService.getGreeting(Matchers.anyString())).thenReturn(greeting);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/greeting?name=hsia").accept(MediaType.APPLICATION_JSON);
 		MvcResult result = mockMVC.perform(requestBuilder).andReturn();
 
 		String expected = "{\"id\":1,\"content\":\"Hello, Hsia\"}";
