@@ -9,7 +9,7 @@ import com.scrumtraveller.springboot.domain.Greeting;
 @Service
 public class GreetingService implements IGreetingService {
 
-	private static final String template = "Hello, %s!";
+	private static final String template = "Hello %s!";
 	private final AtomicLong counter = new AtomicLong();
 
 	@Override

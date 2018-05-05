@@ -47,13 +47,13 @@ public class TestGreetingController {
 	public void retrieveGreetingWithName() throws Exception {
 
 		// Return JSON looks like this: {"id":1,"content":"Hello, Hsia"}
-		Greeting greeting = new Greeting(1l, "Hello, Hsia");
+		Greeting greeting = new Greeting(1l, "Hello Hsia");
 
 		Mockito.when(greetingService.getGreeting(Matchers.anyString())).thenReturn(greeting);
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/greeting?name=hsia").accept(MediaType.APPLICATION_JSON);
 		MvcResult result = mockMVC.perform(requestBuilder).andReturn();
 
-		String expected = "{\"id\":1,\"content\":\"Hello, Hsia\"}";
+		String expected = "{\"id\":1,\"content\":\"Hello Hsia\"}";
 		JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
 
 	}
