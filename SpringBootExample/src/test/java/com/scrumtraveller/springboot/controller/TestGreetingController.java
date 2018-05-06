@@ -23,10 +23,8 @@ import org.springframework.http.MediaType;
 @WebMvcTest(value = GreetingController.class, secure = false)
 public class TestGreetingController {
 
-	@Autowired
-	private MockMvc mockMVC;
-	@MockBean
-	private IGreetingService greetingService;
+	@Autowired private MockMvc mockMVC;
+	@MockBean private IGreetingService greetingService;
 
 	@Test
 	public void retrieveGreeting() throws Exception {
